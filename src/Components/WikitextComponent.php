@@ -2,9 +2,13 @@
 /**
  * File containing the WikitextComponent class
  * This file is part of the MediaWiki skin Chameleon.
- *
+ * 
+ * @todo See which methods can be simply inherited
+ * (no need to overwrite them with identical ones)
+ * @todo don't hardcode language 'en'
+ * 
  * @file
- * @ingroup   Skins
+ * @ingroup Skins
  */
 
 namespace Skins\Chameleon\Components;
@@ -29,9 +33,8 @@ abstract class WikitextComponent extends Component {
 
 	private $mDomElement = null;
 
-	// @DG to be exposed to child class
+	// Must be exposed to child class
 	public $mParserOutput;
-	// @DG
 	private $mPagename = null;
 	private $mNamespace = null;
 
@@ -52,11 +55,13 @@ abstract class WikitextComponent extends Component {
 			$this->addClasses( $domElement->getAttribute( 'class' ) );
 		}
 
-		// @DG - Get values from child
+		// Get values from child
 		$this->mPagename = static::$mPagename;
 		$this->mNamespace = static::$mNamespace;
 		if ( $this->mPagename !== null && $this->mNamespace !== null ) {
-			$this->getParserOutputFromPage( $this->mPagename, $this->mNamespace );
+			$this->getParserOutputFromPage(
+				$this->mPagename,$this->mNamespace
+			);
 		}
 	}
 
@@ -80,11 +85,11 @@ abstract class WikitextComponent extends Component {
 	 *
 	 * @throws \MWException
 	 */
-	public function addClasses( $classes ) {
+	public function addClasses( $classes ): void {
 		$classesArray = $this->transformClassesToArray( $classes );
 
 		if ( !empty( $classesArray ) ) {
-			$classesArray   = array_combine( $classesArray, $classesArray );
+			$classesArray = array_combine( $classesArray, $classesArray );
 			$this->mClasses = array_merge( $this->mClasses, $classesArray );
 		}
 	}

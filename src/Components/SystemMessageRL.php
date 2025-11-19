@@ -18,7 +18,7 @@ class SystemMessageRL extends WikitextComponent {
 
     /**
 	 * @inheritdoc
-	 * @return String the HTML code
+	 * @return string the HTML code
 	 */
 	public function getHtml() {
         self::$mPagename = $systemMsg = $this->getDomElement()->getAttribute("data-system-msg");

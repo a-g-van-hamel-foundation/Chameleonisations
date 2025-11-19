@@ -1,6 +1,6 @@
 # Chameleonisations
 
-Chameleonisations is a small MediaWiki extension to help you extend and customise the [Chameleon skin](https://github.com/ProfessionalWiki/chameleon). What this currently comes down to is that it makes new component types available on top of the existing ones that ship with Chameleon.
+Chameleonisations is a small MediaWiki extension to help you extend and customise the [Chameleon skin](https://github.com/ProfessionalWiki/chameleon) in MediWiki 1.43+. What this currently comes down to is that it makes new component types available on top of the existing ones that ship with Chameleon.
 
 ## Installation and configuration
 To load the extension, add the following to `LocalSettings.php`
@@ -67,4 +67,4 @@ The SearchbarCodex component is an implementation of Codex's TypeaheadSearch inp
 A former version of this extension (unreleased) also contained a search input based on Semantic MediaWiki. Because of the lack of accepted standards and predictability, this was removed but some of this functionality has been further developed for the [Reconciliation API extension](https://github.com/a-g-van-hamel-foundation/ReconciliationAPI). A Chameleon component using a search input based on that extension may be worth considering in the future.
 
 ## Credits
-Thanks to [Wikibase Solutions](https://github.com/WikibaseSolutions) for leading the way in defining custom components and to Morne Alberts (@malberts) for suggesting to me the creation of a separate extension to add complementary features.
+Thanks to [Wikibase Solutions](https://github.com/WikibaseSolutions) for leading the way in defining custom components based on system messages and to Morne Alberts (@malberts) for suggesting to me the creation of a separate extension to add complementary features.

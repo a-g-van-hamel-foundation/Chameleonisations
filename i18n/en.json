@@ -1,0 +1,5 @@
+{
+	"chameleonisations": "Chameleonisations",
+    "chameleonisations-desc": "Makes custom components available to your Chameleon skin layout",
+    "chameleonisations-config-mustachedir": "Directory containing your skin's Mustache templates and JSON data"
+}

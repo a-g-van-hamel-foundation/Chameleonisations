@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<structure xmlns="https://cmln.github.io/chameleon/schema/3.5/layout.rng">
+
+    <component type="NavbarHorizontal" >
+		<modification type="ShowOnlyFor" permission="edit"/>
+		<modification type="Sticky"/>
+        <component type="NavMenu" flatten="navigation"/>
+        <component type="Menu" message="secondary-menu"/>
+		<component type="PageTools" class="flex-row" position="right" hideSelectedNameSpace="yes"/>
+		<component type="SearchBar" class="order-first order-cmln-0" position="right" buttons="go"/>
+		<component type="PersonalTools" position="right"/>
+    </component>
+
+    <component type="Top">
+        <modification type="ShowOnlyFor" group="user" />
+    </component>
+
+    <component type="Header" class="codecs-header">
+        <modification type="HideFor" group="user" />
+    </component>
+     <component type="HeaderUser" class="codecs-header">
+        <modification type="ShowOnlyFor" group="user" />
+    </component>
+
+    <component type="Banner" />
+
+    <grid mode="" class="mw-navigation-container">
+        <component type="MainContentNoHeader" />
+
+        <row>
+			<cell>
+				<component type="FooterInfo"/>
+				<component type="FooterPlaces"/>
+			</cell>
+			<cell>
+				<component type="FooterIcons" class="justify-content-end"/>
+			</cell>
+		</row>
+    </grid>
+
+    <component type="SystemMessage" data-system-msg="chameleon-component-test1" />
+
+    <component type="SystemMessageRL" data-system-msg="chameleon-component-test2-rl" />
+
+</structure>

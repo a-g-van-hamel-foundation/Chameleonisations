@@ -1,0 +1,54 @@
+{{!
+	bool|null include-sitename
+	string|null html-sitename
+		Name of the website.
+	string|null html-home-url
+		Url to homepage
+	
+	array navbar-items
+
+}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+	{{#include-sitename}}
+		<a class="navbar-brand" href="{{ html-home-url }}">{{{ html-sitename }}}</a>
+	{{/include-sitename}}
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			{{#navbar-items}}
+				{{#is-link}}
+				<li class="nav-item {{ navitem-status }}">
+					<a class="nav-link {{ navlink-status }}" href="{{ url }}">{{{ title }}}</a>
+				</li>
+				{{/is-link}}
+				{{#is-dropdown}}
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+						{{{ title }}}
+					</a>
+					<div class="dropdown-menu">
+						{{#dropdown-items}}
+							<!-- list within list -->
+							{{#is-link}}
+								<a class="dropdown-item" href="{{{ url }}}">{{{ title }}}</a>
+							{{/is-link}}
+							{{#is-divider}}
+								<div class="dropdown-divider"></div>
+							{{/is-divider}}
+							{{#is-header}}
+								<strong class="dropdown-header codecs__subheading my-0">{{{ title }}}</strong>
+							{{/is-header}}
+						{{/dropdown-items}}
+					</div>
+				</li>
+				{{/is-dropdown}}
+			{{/navbar-items}}
+		</ul>
+
+	</div>
+</nav>

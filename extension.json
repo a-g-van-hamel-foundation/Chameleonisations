@@ -1,0 +1,69 @@
+{
+	"name": "Chameleonisations",
+	"author": "Dennis Groenewegen (CODECS)",
+	"version": "1.0.0",
+	"license-name": "GPL-3.0-or-later",
+	"type": "other",
+	"url": "https://github.com/a-g-van-hamel-foundation/Chameleonisations",
+	"descriptionmsg": "chameleonisations-desc",
+	"AutoloadClasses": {
+		"Skins\\Chameleon\\Components\\MainContentNoHeader": "src/Components/MainContentNoHeader.php",
+		"Skins\\Chameleon\\Components\\WikitextComponent": "src/Components/WikitextComponent.php",
+		"Skins\\Chameleon\\Components\\SystemMessage": "src/Components/SystemMessage.php",
+		"Skins\\Chameleon\\Components\\SystemMessageRL": "src/Components/SystemMessageRL.php",
+		"Skins\\Chameleon\\Components\\Mustache": "src/Components/Mustache.php",
+		"Skins\\Chameleon\\Components\\SearchbarCodex": "src/Components/SearchbarCodex.php"
+	},
+	"MessagesDirs": {
+		"Chameleonisations": [
+		  "i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.chameleonvue": {
+			"localBasePath": "modules",
+			"remoteExtPath": "Chameleonisations/modules",
+			"packageFiles": [
+				"ext.chameleonvue.js"
+			],
+			"dependencies": [
+				"ext.chameleonvue.components",
+				"vue",
+				"mediawiki.api"
+			]
+		},
+		"ext.chameleonvue.components": {
+			"localBasePath": "modules",
+			"remoteExtPath": "Chameleonisations/modules",
+			"dependencies": [
+				"mediawiki.language.names",
+				"@wikimedia/codex",
+				"@wikimedia/codex-search"
+			],
+			"messages": [],
+			"styles": [],
+			"packageFiles": [
+				"vuecomponents/index.js",
+				"vuecomponents/TypeaheadSearch.vue",
+				{
+					"name": "vuecomponents/icons.json",
+					"callback": "MediaWiki\\ResourceLoader\\CodexModule::getIcons",
+					"callbackParam": [
+						"cdxIconSearch",
+						"cdxIconSettings",
+						"cdxIconTrash"
+					]
+				}
+			]
+		}
+	},
+	"config_prefix": "wg",
+	"config": {
+		"ChameleonMustacheDir": {
+			"value": "extensions/Chameleonisations/examples/templates",
+			"descriptionmsg": "chameleonisations-config-mustachedir"
+		}
+	},
+	"manifest_version": 2,
+	"load_composer_autoloader": false
+}

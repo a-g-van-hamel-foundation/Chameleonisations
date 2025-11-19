@@ -1,0 +1,60 @@
+{
+	"include-sitename": true,
+	"html-sitename": "My Wiki",
+	"html-home-url": "Home",
+	"navbar-items": [
+		{
+			"is-link": true,
+			"is-dropdown": false,
+			"title": "Home",
+			"page": "Main Page",
+			"navitem-status": "",
+			"navlink-status": ""
+		},
+		{
+			"is-link": false,
+			"is-dropdown": true,
+			"title": "Help pages",
+			"navitem-status": "",
+			"navlink-status": "",
+			"dropdown-items": [
+				{
+					"is-link": true,
+					"title": "Page 1",
+					"page": "Help:Page 1"
+				},
+				{
+					"is-link": true,
+					"title": "Page 2",
+					"page": "Help:Page 2"
+				},
+				{
+					"is-divider": true
+				},
+				{
+					"is-header": true,
+					"title": "See also"
+				},
+				{
+					"is-link": true,
+					"title": "Wikipedia on chameleons",
+					"url": "https://en.wikipedia.org/wiki/Chameleon"
+				}
+			]
+		},
+		{
+			"is-link": false,
+			"is-dropdown": true,
+			"title": "Other",
+			"navitem-status": "",
+			"navlink-status": "",
+			"dropdown-items": [
+				{
+					"is-link": true,
+					"title": "Page 3",
+					"page": "Help:Page 3"
+				}
+			]
+		}
+	]
+}

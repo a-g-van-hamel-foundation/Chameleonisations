@@ -1,6 +1,6 @@
 # Chameleonisations
 
-Chameleonisations is a small MediaWiki extension to help you extend and customise the [Chameleon skin](https://github.com/ProfessionalWiki/chameleon) in MediWiki 1.43+. What this currently comes down to is that it makes new component types available on top of the existing ones that ship with Chameleon.
+Chameleonisations is a small MediaWiki extension to help you extend and customise the [Chameleon skin](https://github.com/ProfessionalWiki/chameleon) in MediaWiki 1.43+. What this currently comes down to is that it makes new component types available on top of the existing ones that ship with Chameleon.
 
 ## Installation and configuration
 To load the extension, add the following to `LocalSettings.php`

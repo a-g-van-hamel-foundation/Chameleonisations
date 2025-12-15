@@ -26,6 +26,8 @@ How?
 <component type="SystemMessage" data-system-msg="Footer" />
 ```
 
+By default, the content of the system message will be wrapped inside a `div` element, which will accept any `class` and `id` attributes you add to the component. You can opt out of this wrapper by adding `div-omit-wrapper="true"` to the component.
+
 ### SystemMessageRL components
 
 SystemMessageRL is simply a variant of the SystemMessage component with one crucial difference: it experimentally adds (improved) support for loading ResourceLoader modules. Use this, for instance, if your system message comes with a Semantic MediaWiki query that you need to run in [`@deferred` mode](https://www.semantic-mediawiki.org/wiki/Help:Result_formats_(deferred_mode)). 

@@ -13,11 +13,14 @@
 
 namespace Skins\Chameleon\Components;
 
-use Skins\Chameleon\ChameleonTemplate;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\Parser\ParserOptions;
+use WikiPage;
+use MWException;
+use Skins\Chameleon\ChameleonTemplate;
+use Skins\Chameleon\Components\Component;
 
 /**
  * WikitextComponent class
@@ -43,7 +46,7 @@ abstract class WikitextComponent extends Component {
 	 * @param \DOMElement|null $domElement
 	 * @param int $indent
 	 *
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	public function __construct( ChameleonTemplate $template, \DOMElement $domElement = null,
 		$indent = 0 ) {
@@ -70,7 +73,7 @@ abstract class WikitextComponent extends Component {
 	 *
 	 * @param string | array | null $classes
 	 *
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	public function setClasses( $classes ) {
 		$this->mClasses = [];
@@ -83,7 +86,7 @@ abstract class WikitextComponent extends Component {
 	 *
 	 * @param string | array | null $classes
 	 *
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	public function addClasses( $classes ): void {
 		$classesArray = $this->transformClassesToArray( $classes );
@@ -102,7 +105,7 @@ abstract class WikitextComponent extends Component {
 	 * @param string | array | null $classes
 	 *
 	 * @return array
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	protected function transformClassesToArray( $classes ) {
 		if ( empty( $classes ) ) {
@@ -112,7 +115,7 @@ abstract class WikitextComponent extends Component {
 		} elseif ( is_string( $classes ) ) {
 			return explode( ' ', $classes );
 		} else {
-			throw new \MWException( __METHOD__ . ': Expected String or Array; ' . gettype( $classes ) .
+			throw new MWException( __METHOD__ . ': Expected String or Array; ' . gettype( $classes ) .
 				' given.' );
 		}
 	}
@@ -155,7 +158,7 @@ abstract class WikitextComponent extends Component {
 	 *
 	 * @param string | array | null $classes
 	 *
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	public function removeClasses( $classes ) {
 		$classesArray = $this->transformClassesToArray( $classes );
@@ -198,13 +201,13 @@ abstract class WikitextComponent extends Component {
 	 *
 	 * @param int $indent
 	 * @return string
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	protected function indent( $indent = 0 ) {
 		$this->mIndent += (int)$indent;
 
 		if ( $this->mIndent < 0 ) {
-			throw new \MWException( 'Attempted HTML indentation of ' . $this->mIndent );
+			throw new MWException( 'Attempted HTML indentation of ' . $this->mIndent );
 		}
 
 		return "\n" . str_repeat( "\t", $this->mIndent );
@@ -236,7 +239,7 @@ abstract class WikitextComponent extends Component {
 			// @todo language
 			MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'en' )
 		);
-		$wikiPage = new \WikiPage( $pageIdentity );
+		$wikiPage = new WikiPage( $pageIdentity );
 		if ( !$wikiPage->exists() ) {
 			//
 		}

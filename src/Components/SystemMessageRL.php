@@ -10,6 +10,9 @@
 
 namespace Skins\Chameleon\Components;
 
+use MediaWiki\Html\Html;
+use Skins\Chameleon\Components\WikitextComponent;
+
 class SystemMessageRL extends WikitextComponent {
 
     public static $mPagename = null;
@@ -29,7 +32,7 @@ class SystemMessageRL extends WikitextComponent {
 
 		return
 			$this->indent() . "<!-- $systemMsg (SystemMessageRL) -->" .
-			$this->indent() . \Html::openElement( 'div',
+			$this->indent() . Html::openElement( 'div',
 				[
 					'class' => $this->getClassString(),
 					'role'  => 'banner'

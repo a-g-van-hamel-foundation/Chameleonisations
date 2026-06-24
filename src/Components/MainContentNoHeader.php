@@ -1,4 +1,5 @@
 <?php
+
 /**
  * File holding the MainContentNoHeader class
  * Version of MainContent without ContentHeader
@@ -10,6 +11,11 @@
 namespace Skins\Chameleon\Components;
 
 use Skins\Chameleon\IdRegistry;
+use Skins\Chameleon\Components\MainContent;
+use Skins\Chameleon\Components\AggregateComponentTrait;
+use Skins\Chameleon\Components\Indicators;
+use Skins\Chameleon\Components\ContentBody;
+use Skins\Chameleon\Components\CategoryLinks;
 
 class MainContentNoHeader extends MainContent {
 
@@ -18,7 +24,7 @@ class MainContentNoHeader extends MainContent {
 	/**
 	 * Builds the HTML code for this component
 	 *
-	 * @return String the HTML code
+	 * @return string the HTML code
 	 * @throws \MWException
 	 */
 	public function getHtml() {

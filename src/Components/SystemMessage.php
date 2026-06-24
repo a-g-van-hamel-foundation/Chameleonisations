@@ -8,6 +8,9 @@
 
 namespace Skins\Chameleon\Components;
 
+use MediaWiki\Html\Html;
+use Skins\Chameleon\Components\Component;
+
 class SystemMessage extends Component {
 
 	/**
@@ -42,7 +45,7 @@ class SystemMessage extends Component {
 			}
 
 			$res = $this->indent() . "<!-- $systemMsg (SystemMessage) -->" .
-				$this->indent() . \Html::openElement( "div", $divAttributes ) .
+				$this->indent() . Html::openElement( "div", $divAttributes ) .
 				$this->indent(1) . wfMessage( $systemMsg )->parse() .
 				$this->indent( -1 ) . "</div>" . "\n";
 		}

@@ -7,7 +7,9 @@
 namespace Skins\Chameleon\Components;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
+use Skins\Chameleon\Components\Component;
 
 class Mustache extends Component {
 
@@ -38,7 +40,7 @@ class Mustache extends Component {
 
 		return
 			$this->indent() . "<!-- $templateName (Mustache) -->" .
-			$this->indent() . \Html::openElement( "div",
+			$this->indent() . Html::openElement( "div",
 				[
 					"class" => $this->getClassString(),
 					"role"  => "banner"
